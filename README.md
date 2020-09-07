@@ -24,6 +24,10 @@
 | ----------- |-------  | ----------- |
 | image       | text    | null: false |
 | name        | string  | null: false |
+| width        | string  | null: false |
+| depth        | string  | null: false |
+| height        | string  | null: false |
+| explanation | text | null: false |
 | category_id | integer | null: false |
 | price       | integer | null: false |
 | user        | references | null: false, foreign_key: true |
