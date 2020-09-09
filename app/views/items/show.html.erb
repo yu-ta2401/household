@@ -25,15 +25,15 @@
     </div>
 
     <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <% if user_signed_in? && @item.user_id == current_user.id %>
-      <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
-      <p class='or-text'>or</p>
-       <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
-      <% elsif user_signed_in? && @item.user_id != current_user.id && @item.purchase.blank? %>
-        <%= link_to '購入画面に進む', item_purchases_path(item_id: @item.id),class:"item-red-btn"%>
-      <%else%>
-        <%= link_to '購入画面に進む', new_user_session_path, class:"item-red-btn" %>
-    <% end %>
+    <%# <% if user_signed_in? && @item.user_id == current_user.id %>
+      <%# <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
+      <%# <p class='or-text'>or</p> %>
+       <%# <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
+      <%# <% elsif user_signed_in? && @item.user_id != current_user.id && @item.purchase.blank? %> %>
+        <%# <%= link_to '購入画面に進む', item_purchases_path(item_id: @item.id),class:"item-red-btn"%>
+      <%# <%else%> 
+        <%# <%= link_to '購入画面に進む', new_user_session_path, class:"item-red-btn" %>
+    <%# <% end %> 
     <%# ログインしていないユーザーはログイン画面に遷移させ、ログインしていれば購入ページに移動できる %>
     <div class="item-explain-box">
       <span><%= @item.explanation %></span>

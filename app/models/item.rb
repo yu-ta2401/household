@@ -3,6 +3,9 @@ class Item < ApplicationRecord
   has_one_attached :image
   validate :image_presence
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+     belongs_to_active_hash :category
+
   with_options presence: true do
     validates :name
     validates :image
@@ -14,6 +17,6 @@ class Item < ApplicationRecord
   end
 
   # def image_presence
-  #   self.image.attached?
+  #    self.image.attached?
   # end 
 end
