@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     validates :category_id, numericality: { other_than: 1 }
   end
 
-  # def image_presence
-  #    self.image.attached?
-  # end 
+  def image_presence
+    self.image.attached?
+  end 
 end
