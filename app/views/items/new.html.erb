@@ -20,7 +20,7 @@
         <div class="click-upload">
           <p>
             クリックしてファイルをアップロード
-          </p> 
+          </p>
           <%= f.file_field :image, id:"item-image" %>
         </div> 
       </div>
@@ -39,7 +39,16 @@
           </div>
           <%= f.text_area :explanation, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
         </div>
-         <div class="weight-bold-text">
+      </div>
+      <div class="items-detail">
+          <div class="weight-bold-text">商品の詳細</div>
+        <div class="form">
+          <div class="weight-bold-text">
+            カテゴリー
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          <div class="weight-bold-text">
             商品の幅
             <span class="indispensable">必須</span>
           </div>
@@ -53,20 +62,8 @@
             商品の縦
             <span class="indispensable">必須</span>
           </div>
-          <%= f.text_area (:height, class:"items-text", id:"item-info", placeholder:"商品の縦(必須) 例）1850mm" %>
+          <%= f.text_area :height, class:"items-text", id:"item-info", placeholder:"商品の縦(必須) 例）1850mm" %>
         </div>
-      </div>
-      <%# /商品名と商品説明 %>
-
-      <%# 商品の詳細 %>
-      <div class="items-detail">
-          <div class="weight-bold-text">商品の詳細</div>
-        <div class="form">
-          <div class="weight-bold-text">
-            カテゴリー
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
                 <%# <div class="weight-bold-text">
                   商品の状態
                   <span class="indispensable">必須</span>
@@ -80,7 +77,7 @@
           <%# <a class="question" href="#">?</a> %>
         <%# </div> %>
         <%# <div class="form">
-         </div> %>
+            </div> %>
       <%# </div> %>
                           <%# /配送について %>
 

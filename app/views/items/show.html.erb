@@ -9,10 +9,10 @@
     <div class='item-img-content'>
       <%= image_tag @item.image, class:"item-box-img" "item-img" if @item.image.attached? %>
       <%# 商品が売れている場合は、sold outの表示をしましょう。 %>
-        <% if @item.purchase != nil %> 
-          <div class='sold-out'>
-            <span>Sold Out!!</span>
-          </div>
+        <%# <% if @item.purchase != nil %> 
+          <%# <div class='sold-out'>
+            <span>Sold Out!!</span> %>
+          <%# </div>
         <% end %>
     </div>
     <div class="item-price-box">
@@ -20,62 +20,62 @@
         ¥<%= @item.price %>
       </span>
       <span class="item-postage">
-        (税込) 送料込み
+        (税込)
       </span>
     </div>
 
     <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <%# <% if user_signed_in? && @item.user_id == current_user.id %>
-      <%# <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
-      <%# <p class='or-text'>or</p> %>
-       <%# <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
-      <%# <% elsif user_signed_in? && @item.user_id != current_user.id && @item.purchase.blank? %> %>
-        <%# <%= link_to '購入画面に進む', item_purchases_path(item_id: @item.id),class:"item-red-btn"%>
-      <%# <%else%> 
-        <%# <%= link_to '購入画面に進む', new_user_session_path, class:"item-red-btn" %>
-    <%# <% end %> 
+    <% if user_signed_in? && @item.user_id == current_user.id %>
+      <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
+      <p class='or-text'>or</p> %>
+       <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
+      <% elsif user_signed_in? && @item.user_id != current_user.id && @item.purchase.blank? %>
+        <%= link_to '購入画面に進む', item_purchases_path(item_id: @item.id),class:"item-red-btn"%>
+      <%else%> 
+        <%= link_to '購入画面に進む', new_user_session_path, class:"item-red-btn" %>
+    <% end %> 
     <%# ログインしていないユーザーはログイン画面に遷移させ、ログインしていれば購入ページに移動できる %>
     <div class="item-explain-box">
       <span><%= @item.explanation %></span>
     </div>
     <table class="detail-table">
       <tbody>
-        <tr>
-          <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @item.user.nickname %></td>
-        </tr>
+        <%# <tr> %>
+          <%# <th class="detail-item">登録者</th> %>
+          <%# <td class="detail-value"><%= @item.user.nickname %><%#</td>%>
+        <%# </tr> %>
         <tr>
           <th class="detail-item">カテゴリー</th>
           <td class="detail-value"><%= @item.category.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
+          <th class="detail-item">商品の幅</th>
           <td class="detail-value"><%= @item.state.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">配送料の負担</th>
+          <th class="detail-item">商品の奥行き/th>
           <td class="detail-value"><%= @item.burden.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">発送元の地域</th>
+          <th class="detail-item">商品の縦/th>
           <td class="detail-value"><%= @item.shippingorigin.name %></td>
         </tr>
-        <tr>
-          <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= @item.day.name %></td>
-        </tr>
+        <%# <tr> %>
+          <%# <th class="detail-item">発送日の目安</th> %>
+          <%# <td class="detail-value"><%= @item.day.name %><%#</td> %>
+        <%# </tr> %>
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
-    </div>
+    <%# <div class="option"> %>
+      <%# <div class="favorite-btn"> %>
+        <%# <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%> %>
+        <%# <span>お気に入り 0</span> %>
+      <%# </div> %>
+      <%# <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%> %>
+        <%# <span>不適切な商品の通報</span>
+      </div> %>
+    <%# </div> %>
   </div>
   <%# /商品の概要 %>
 
