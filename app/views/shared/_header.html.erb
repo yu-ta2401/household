@@ -8,11 +8,12 @@
         <%= image_tag "search.png", class:"search-icon" %>
       </button>
     </form>
+     <i class="fas fa-align-justify fa-2x"></i>
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "/items/new", class: "category-list" %></li>
-      <li><%= link_to 'メーカー', "/items/new", class: "brand-list" %></li>
+      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li><%= link_to 'メーカー', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
       <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐させましょう%>

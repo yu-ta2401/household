@@ -58,40 +58,37 @@
                 <%#= f.collection_select(:state_id, State.all, :id, :name, {class:"select-box", id:"item-sales-status"}) %>
         </div>
       </div>
-                        <%# /商品の詳細 %>
-
-                          <%# 配送について %>
-                          <%# <div class="items-detail">
-                            <div class="weight-bold-text question-text">
-                              <span>配送について</span> %>
-                              <%# <a class="question" href="#">?</a> %>
-                            <%# </div> %>
-                            <%# <div class="form">
-                              <div class="weight-bold-text">
-                                配送料の負担 %>
-                                <%# <span class="indispensable">必須</span>
-                              </div>
-                              <%= f.collection_select(:burden_id, Burden.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-                              <%# <div class="weight-bold-text">
-                                発送元の地域 %>
-                                <%# <span class="indispensable">必須</span>
-                              </div> %>
-                              <%# <%= f.collection_select(:shippingorigin_id, Shippingorigin.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
-                              <%# <div class="weight-bold-text"> %>
-                                <%# 発送までの日数
-                                <span class="indispensable">必須</span>
-                              </div> %>
-                              <%# <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"select-box"}) %>
-                            <%# </div>
-                          </div>  %>
+      <div class="items-detail">
+        <div class="weight-bold-text question-text">
+          <span>商品の詳細について</span>
+          <a class="question" href="#">?</a>
+        </div>
+        <div class="form">
+          <div class="weight-bold-text">
+            商品の幅
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :width, class:"items-text", id:"item-info", placeholder:"商品の幅(必須) 例）770mm" %>
+          <div class="weight-bold-text">
+            商品の奥行き
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :depth, class:"items-text", id:"item-info", placeholder:"商品の奥行き(必須) 例）1300mm" %>
+          <div class="weight-bold-text">
+            商品の縦
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :height, class:"items-text", id:"item-info", placeholder:"商品の縦(必須) 例）1850mm" %>
+        </div>
+      </div>
                           <%# /配送について %>
 
-                            <%# 販売価格 %>
+        <%# 参考価格 %>
       <div class="sell-price">
-              <%# <div class="weight-bold-text question-text">
-                <%# <span>販売価格<br>(¥300〜9,999,999)</span> %>
-                <%# <a class="question" href="#">?</a> %>
-              <%# </div> %>
+        <div class="weight-bold-text question-text">
+          <span>参考価格<br>(¥300〜9,999,999)</span>
+              <a class="question" href="#">?</a>
+        </div> 
         <div>
           <div class="price-content">
             <div class="price-text">
@@ -103,7 +100,7 @@
           </div>
         </div>
       </div>
-      *価格.comより
+      *価格.comより*
                             <%# <div class="price-content">
                               <span>販売手数料 (10%)</span>
                               <span>
@@ -116,7 +113,7 @@
                                 <span id='profit'></span>円
                             </div>
                             </span>
-              <%# /販売価格 %>
+      <%# /参考価格 %>
 
             <%# 注意書き %>
             <%# <div class="caution">

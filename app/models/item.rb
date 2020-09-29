@@ -10,6 +10,9 @@ class Item < ApplicationRecord
     validates :name
     validates :image
     validates :explanation
+    validates :width
+    validates :depth
+    validates :height
     validates :category_id
     validates :price, :numericality => { :greater_than_or_equal_to => 300 }
     validates :price, :numericality => { :less_than_or_equal_to => 9999999 }
