@@ -23,7 +23,7 @@
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li>
       <% elsif admin_signed_in? %>
           <li>管理者</li>
-          <li><%= link_to "ログアウト", destroy_adomin_session_path%>
+          <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "logout"%>
       <% else %>
         <li>ゲストユーザー</li>
         <li><%= link_to 'ログイン', "/users/sign_in", class: "login" %></li>
